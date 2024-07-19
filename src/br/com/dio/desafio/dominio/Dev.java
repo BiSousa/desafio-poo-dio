@@ -9,7 +9,7 @@ public class Dev {
 
     public void inscreverBootcamp(Bootcamp bootcamp){
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
-        bootcamp.getDevsInscritos().add(this);
+        bootcamp.getDevsInscritos().add(this); //adiciona o Dev ao bootcamp
     }
 
     public void progredir() {

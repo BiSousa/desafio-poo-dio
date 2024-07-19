@@ -9,8 +9,9 @@ import java.util.Set;
 public class Bootcamp {
     private String nome;
     private String descricao;
+    //constantes
     private final LocalDate dataInicial = LocalDate.now();
-    private final LocalDate dataFinal = dataInicial.plusDays(45);
+    private final LocalDate dataFinal = dataInicial.plusDays(45); //conta a partir da data inicial 45 dias
     private Set<Dev> devsInscritos = new HashSet<>();
     private Set<Conteudo> conteudos = new LinkedHashSet<>();
 
@@ -55,6 +56,11 @@ public class Bootcamp {
         this.conteudos = conteudos;
     }
 
+    public int contarDevs() {
+        return devsInscritos.size();
+      }
+
+    //colocados para realizar as comparações
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -67,4 +73,8 @@ public class Bootcamp {
     public int hashCode() {
         return Objects.hash(nome, descricao, dataInicial, dataFinal, devsInscritos, conteudos);
     }
+
+    /*public static void main(String[] args) {
+        System.out.println("Existem " + Bootcamp.contarDevs() + " convidado(s) dentro do Set de Convidados");
+    }*/
 }
